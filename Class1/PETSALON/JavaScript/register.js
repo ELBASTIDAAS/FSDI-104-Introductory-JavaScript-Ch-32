@@ -10,6 +10,39 @@ let petSalon = {
         number:"263-k",
         zip:"22253"
     },
+    pets:[
+        {
+            name:"Dog",
+            age:"9 month",
+            gender:"Male",
+            service:"Consult"
+        },
+        {
+            name:"Cat",
+            age:"3 years",
+            gender:"Male",
+            service:"Consult"
+        },
+        {
+            name:"Bird",
+            age:"6 years",
+            gender:"Male",
+            service:"Consult"
+        }
+    ]
+}
+
+function showregister(){
+
+    for (let i = 0; i < petSalon.pets.length; i++) {
+        alert([i+1] + " Animals Register");
+    }
+}
+
+function consoleshow(){
+    for (let i = 0; i < petSalon.pets.length; i++) {
+        console.log(petSalon.pets[i]);
+    }
 }
 
 let students =[
