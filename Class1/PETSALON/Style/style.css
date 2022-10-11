@@ -1,0 +1,12 @@
+#pets{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.pet{
+    background-color: #dedede;
+    border: 1px solid #b8b8b8;
+    padding: 10px;
+}

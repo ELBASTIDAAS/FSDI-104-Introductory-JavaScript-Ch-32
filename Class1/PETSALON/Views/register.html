@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Class1/PETSALON/Style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>Fashion Pet</title>
 </head>
 
@@ -41,40 +43,46 @@
     </header>
     <main class="container">
         <h2 class="display-6 text-center">Register</h2>
+        <p id="numberOfPets" class="alert alert-dark">Display the number of pets</p>
         <!-- here we will add the input fields-->
-            <div style="margin-bottom: 50px" id="formulario">
-                <div>
-                    <label class="form-label">Name:</label>
-                    <input class="form-control" type="name" placeholder="Enter pets name" id="txtName">
-                </div>
-                <div>
-                    <label for="">Age:</label>
-                    <input class="form-control" type="number" placeholder="Enter age pet" id="txtAge">
-                </div>
-                <div>
-                    <label for="">Gender:</label>
-                    <input class="form-control" type="text" placeholder="Enter gender pet" id="txtGender">
-                </div>
-                <div>
-                    <label for="">Breed:</label>
-                    <input class="form-control" type="text" placeholder="Enter breed pet" id="txtBreed">
-                </div>
-                <div>
-                    <label for="">Service:</label>
-                    <input class="form-control" type="text" placeholder="Enter service pet" id="txtService">
-                </div>
-                <div style="margin-top: 50px " class="d-grid gap-2 col-2 mx-auto">
-                    <button class="btn btn-outline-success" onclick="register();">Register</button>
-                    <button class="btn btn-outline-info" onclick="showRegister();">Show Register</button>
-                </div>
-    
+        <div style="margin-bottom: 50px" id="formulario">
+            <div>
+                <label class="form-label">Name:</label>
+                <input class="form-control" type="name" placeholder="Enter pets name" id="txtName">
             </div>
-        
+            <div>
+                <label for="">Age:</label>
+                <input class="form-control" type="number" placeholder="Enter age pet" id="txtAge">
+            </div>
+            <div>
+                <label for="">Gender:</label>
+                <input class="form-control" type="text" placeholder="Enter gender pet" id="txtGender">
+            </div>
+            <div>
+                <label for="">Breed:</label>
+                <input class="form-control" type="text" placeholder="Enter breed pet" id="txtBreed">
+            </div>
+            <div class="mb-3">
+                <label for="">Service:</label>
+                <select class="form-select" id="selService">
+                    <option value="" disabled selected>---select an option---</option>
+                    <option value="gromming">Gromming</option>
+                    <option value="vaccine">Vaccine</option>
+                    <option value="nails">Nails</option>
+                </select>
+            </div>
+            <button class="btn btn-outline-success" onclick="register()">Register</button>
+        </div>
+        <div id="pets">
+
+        </div>
+
         <!--here we will add input fields-->
         <!-- pets cards/-->
 
     </main>
-    <script src="/Class1/petSalon/JavaScript/register.js"></script>
+    <script src="/Class1/PETSALON/JavaScript/display.js"></script>
+    <script src="/Class1/PETSALON/JavaScript/register.js"></script>
 </body>
 
 </html>

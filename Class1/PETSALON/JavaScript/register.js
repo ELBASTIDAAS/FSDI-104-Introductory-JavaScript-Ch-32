@@ -13,6 +13,21 @@ let petSalon = {
     pets: []
 }
 
+//<-------  CONSTUCTOR ---->
+function Pet(name, age, gender, breed, service, owner, phone) {
+    //the real attributes are the next
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.breed = breed;
+    this.service = service;
+    this.ownerName = owner;
+    this.contactPhone = phone;
+}
+
+
+
+
 //<------- this are the arguments ---->
 function Pet(name, age, gender, breed, service, owner, phone) {
     //the real attributes are the next
@@ -25,35 +40,49 @@ function Pet(name, age, gender, breed, service, owner, phone) {
     this.contactPhone = phone;
 }
 
-// create a new pet
-let scooby = new Pet("Scooby", 59, "Male", "Dane", "Grooming", "Shaggy", "777-777-777");
-let molly = new Pet("Molly", 45, "Female", "Dane", "Consult", "French", "666-555-777");
-let chimo = new Pet("Chimo", 59, "Male", "Dane", "Vaccine", "Husky", "777-777-777");
-// push the pet into the array
-petSalon.pets.push(scooby);
-petSalon.pets.push(molly);
-petSalon.pets.push(chimo);
-//register function
+//getting the vales from the inputs 
 let inputName = document.getElementById("txtName");
 let inputAge = document.getElementById("txtAge");
 let inputGender = document.getElementById("txtGender");
 let inputBreed = document.getElementById("txtBreed");
-let inputService = document.getElementById("txtService");
+let selectService = document.getElementById("selService");
+
+
+
+//register function
 function register() {
-    console.log(inputName.value);
-    let thePet = new Pet(inputName, inputAge.value, inputGender.value);
+    //create the obj
+    let thePet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, selectService.value);
+    //push the pet into the arrays
     petSalon.pets.push(thePet);
+    //display the array
+    displayPetCards();
+    clearInputs();
+    displayNumberOfPets();
+}
+//clear funcion 
+function clearInputs() {
+    inputName.value = "";
+    inputAge.value = "";
+    inputGender.value = "";
+    inputBreed.value = "";
+    selectService.value = "";
+}
 
-}
-function showRegister() {
-    for (let i = 0; i < petSalon.pets.length; i++) {
-        console.log(petSalon.pets[i].name)
-    }
-    alert(`we currently have ${petSalon.pets.length} registered.`)
+function displayNumberOfPets() {
+    document.getElementById("numberOfPets").innerHTML = `we have ${petSalon.pets.length} pets in the system.`;
 }
 
-function consoleshow() {
-    for (let i = 0; i < petSalon.pets.length; i++) {
-        console.log(petSalon.pets[i]);
-    }
+
+
+function init() {
+    //create a new pet 
+    let scooby = new Pet("Scooby", 59, "Male", "Dane", "Grooming", "Shaggy", "777-777-777");
+    let scrappy = new Pet("Scrappy", 49, "Male", "mixted", "vaccine", "Shaggy", "777-777-777");
+    //push the pet into the array
+    petSalon.pets.push(scooby, scrappy);
+    displayNumberOfPets();
+    displayPetCards();
 }
+
+window.onload = init;
