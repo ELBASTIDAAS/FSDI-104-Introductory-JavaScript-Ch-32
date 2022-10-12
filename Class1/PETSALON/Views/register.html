@@ -71,15 +71,42 @@
                     <option value="nails">Nails</option>
                 </select>
             </div>
+            <div>
+                <label for="">Owner Name:</label>
+                <input class="form-control" type="text" placeholder="Enter your name" id="txtOwner">
+            </div>
+            <div>
+                <label for="">Phone:</label>
+                <input class="form-control" type="phone" placeholder="Enter your phone" id="txtPhone">
+            </div>
             <button class="btn btn-outline-success" onclick="register()">Register</button>
         </div>
         <div id="pets">
 
         </div>
-
+        <div>
+        <input type="text" placeholder="Search">
+        <button class="btn btn-info">Search</button>
+        </div>
+        <table id="pet-table" class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Breed</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Owner</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="petsTable">
+            </tbody>
+        </table>
         <!--here we will add input fields-->
         <!-- pets cards/-->
-
     </main>
     <script src="/Class1/PETSALON/JavaScript/display.js"></script>
     <script src="/Class1/PETSALON/JavaScript/register.js"></script>
